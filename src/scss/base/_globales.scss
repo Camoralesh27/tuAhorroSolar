@@ -1,0 +1,65 @@
+@use 'variables' as v;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: v.$body-font;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    background-color: v.$background;
+    color: v.$black;
+}
+
+h1, h2, h3, h4 {
+    color: v.$blue-3;
+    font-weight: 700;
+    
+    //reset again
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+
+/*==== REUSABLE CSS CLASSES ====*/
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}

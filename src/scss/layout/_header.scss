@@ -1,0 +1,83 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header {
+    box-shadow: v.$box-shadow;
+
+    /* PRIMER CONTACTO */
+    &__info {
+        background-color: v.$blue-3;
+        display: flex;
+        justify-content: space-between;
+        color: v.$white;
+        max-width: 100vw;
+        padding: 1.5rem 3rem;
+        align-items: center;
+    }
+
+    &__info-email,
+    &__info-phone {
+
+        & i {
+            color: v.$yellow-2;
+        }
+    }
+
+    &__info-phone-text {
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__info-phone-number {
+        color: v.$white;
+    }
+
+
+}
+
+/* NAV BAR */
+
+.nav {
+    display: flex;
+    max-width: 100vw;
+    padding: .6rem 2.9rem;
+    background: var(--white, #FBFBFB);
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        width: 25.6rem;
+        height:7.2rem;
+    }
+
+    &__links {
+        display: flex;
+        gap: 2.6rem;
+
+        &-link {
+            color: v.$black;
+            font-weight: 500;
+        }
+
+        &-item {
+            transition: all 300ms;
+        }
+
+        &-item:hover {
+            transform: scale(1.1);
+
+            & a {
+                color: v.$blue-3;
+            }
+            
+        }
+
+        
+    }
+
+    &__button {
+        @include m.boton(v.$yellow-2,v.$black);
+    }
+}

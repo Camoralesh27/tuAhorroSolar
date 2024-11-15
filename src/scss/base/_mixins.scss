@@ -1,0 +1,51 @@
+@use 'variables' as v;
+@use 'sass:color';
+
+@mixin phone {
+    @media screen and (max-width: v.$phone){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1rem 4rem;
+    color: $colorTexto;
+    /* margin-top: 2rem;
+    font-size: 2.2rem; */
+    border-radius: 2rem;
+    box-shadow: v.$box-shadow;
+    font-weight: 400;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 300ms;
+
+    @include tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: color.adjust($bgColor, $lightness: 7%);
+        transform: scale(1.05);
+    }
+}
