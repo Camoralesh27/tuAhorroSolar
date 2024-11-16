@@ -5,16 +5,14 @@
     $heading-font: "Rubik", sans-serif;
     $body-font :  "Work Sans", sans-serif;
 
-    /* Font size for large devices */
-    /* @media screen and (min-width: 968px) {
-        $big-font-size: 3rem;
-        $h1-font-size: 2.25rem;
-        $h2-font-size: 1.5rem;
-        $h3-font-size: 1.25rem;
-        $normal-font-size: 1rem;
-        $small-font-size: .875rem;
-        $smaller-font-size: .813rem;
-    } */
+//FONT SIZE
+    $h1-font-size: 7.2rem;
+    $h2-font-size: 4.8rem;  
+    $h3-font-size: 3.2rem;
+    $h4-font-size: 2.4rem;
+    $h5-font-size: 2rem;
+    $normal-font-size: 1.8rem;
+
 
 // MEDIA QUERIES
     $phone: 768px;
@@ -40,4 +38,17 @@
     $white: #FFFFFF;
 
 // BOX-SHADOW
-   $box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+    $box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
+
+
+
+   /* Font size for large devices */
+    /* @media screen and (min-width: 968px) {
+        $big-font-size: 3rem;
+        $h1-font-size: 2.25rem;
+        $h2-font-size: 1.5rem;
+        $h3-font-size: 1.25rem;
+        $normal-font-size: 1rem;
+        $small-font-size: .875rem;
+        $smaller-font-size: .813rem;
+    } */

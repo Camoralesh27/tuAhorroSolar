@@ -1,0 +1,29 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.reembolso {
+    background-color: v.$white;
+
+    &__contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    
+    &__boton {
+        @include m.boton2(v.$white, v.$black); 
+    }
+
+    &__texto {
+        color: v.$blue-2;
+        font-size: v.$h3-font-size;
+        font-weight: 400;
+        font-family: v.$heading-font;
+
+        &--precio {
+            font-size: v.$h2-font-size;
+            font-weight: 700;
+        }
+    }
+}

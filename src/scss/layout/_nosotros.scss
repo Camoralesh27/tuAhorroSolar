@@ -1,0 +1,47 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.nosotros {
+    display: grid;
+    grid-template-columns: 9fr 4fr;
+
+    
+    &__content {
+        grid-column: 0 / 1; 
+        display: flex;
+        flex-direction: column;
+        align-items: left;  
+        padding: 3rem 10rem;
+    }
+
+    &__title {
+        font-size: v.$h2-font-size;
+        font-weight: 700;
+        font-family: v.$heading-font;
+        color: v.$blue-2;
+        margin-bottom: 2rem;
+    }
+
+    &__texts-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    &__text {
+        font-size: v.$normal-font-size;
+        margin-bottom: 2rem;
+    }
+
+    &__imagen {
+        grid-column: 1 / 2;
+        /* width: 100%;
+        height: 100%; */
+        object-fit: cover;
+    }
+
+    &__button {
+        @include m.boton(v.$yellow-2, v.$black);
+    }
+}
