@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.mapa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 0;
+
+
+    &__content {
+        background-color: #FBC83B;
+        width: 100%;
+        padding-top: 3rem;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: v.$h2-font-size;
+        font-family: v.$heading-font;
+    }
+
+    &__button {
+        @include m.boton(v.$blue-3, v.$white);
+    }
+
+    &__img {
+        margin-top: -5rem;
+        z-index: -1;
+    }
+
+}
