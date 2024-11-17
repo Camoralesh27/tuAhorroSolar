@@ -18,9 +18,9 @@
     &__title {
         font-size: v.$h2-font-size;
         font-weight: 700;
-        font-family: v.$heading-font;
         color: v.$blue-2;
         margin-bottom: 2rem;
+        text-transform: uppercase;
     }
 
     &__texts-grid {
@@ -31,7 +31,7 @@
 
     &__text {
         font-size: v.$normal-font-size;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 
     &__imagen {

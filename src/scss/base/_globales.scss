@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: v.$body-font;
-    font-size: 1.6rem;
+    font-size: v.$normal-font-size;
     line-height: 1.8;
     background-color: v.$background;
     color: v.$black;
@@ -23,6 +23,7 @@ body {
 h1, h2, h3, h4 {
     color: v.$blue-3;
     font-weight: 700;
+    font-family: v.$heading-font;
     
     //reset again
     padding: 0;
@@ -63,3 +64,16 @@ picture {
     max-width: 120rem;
     margin: 0 auto;
 }
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.w100 {
+    width: 100%;
+}
+
