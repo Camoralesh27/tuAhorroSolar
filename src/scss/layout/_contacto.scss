@@ -153,20 +153,11 @@
             font-size: v.$normal-font-size;     
         }
 
-        /* &-fieldset2 {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1.5rem;
-        } */
-
         &-submit {
+            border: none;
             max-width: 70rem;
             @include m.boton(v.$blue-3, v.$white);
+            
         }
     }
-
-
 }
