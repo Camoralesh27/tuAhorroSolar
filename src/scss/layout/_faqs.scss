@@ -1,0 +1,84 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.faqs {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    gap: 2rem;
+
+    &__box {
+        display: grid;
+        grid-template-columns: 3fr 8fr;
+        gap: 2rem;
+    }
+
+    &__contenido {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__title {
+        font-size: v.$h2-font-size;
+        line-height: 6rem;
+    }
+
+    &__line {
+        width: 10rem;
+        height: .5rem;
+        background-color: v.$yellow-2;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: 35rem;
+        gap: 2rem;
+        border-radius: 2rem;
+        box-shadow: v.$box-shadow;
+        overflow: hidden;
+
+        &-img {
+            height: 20rem;
+            width: 100%;
+            overflow: hidden;
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 2rem;
+        }
+
+        &-text {
+            font-size: v.$normal-font-size;
+            font-weight: 500;
+        }
+
+        &-boton2 {
+            @include m.boton3(v.$white, v.$blue-2);
+        }
+    }
+
+    &__boton {
+        margin-top: 2rem;
+        @include m.boton(v.$yellow-2, v.$black);
+    }
+}
