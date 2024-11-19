@@ -80,6 +80,12 @@
         &-link {
             color: v.$blue-2;
             font-size: v.$h3-font-size;
+            transition: all 200ms;
+
+            &:hover {
+                color: v.$yellow-2;
+                scale: 1.1;
+            }
         }
     }
 }

@@ -46,6 +46,7 @@
     &:hover {
         background-color: color.adjust($bgColor, $lightness: 7%);
         transform: scale(1.05);
+        cursor: pointer;
     }
 }
 
@@ -71,6 +72,7 @@
     &:hover {
         background-color: color.adjust($bgColor, $lightness: 7%);
         transform: scale(1.05);
+        cursor: pointer;
     }
 }
 
@@ -98,5 +100,6 @@
     &:hover {
         background-color: color.adjust($bgColor, $lightness: 7%);
         transform: scale(1.05);
+        cursor: pointer;
     }
 }

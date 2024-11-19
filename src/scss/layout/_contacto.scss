@@ -43,7 +43,7 @@
         border-radius: 2rem;
         color: v.$white;
         padding: 3.3rem 4rem;
-        height: 82rem;
+        height: 87rem;
 
 
         &-title {
@@ -89,6 +89,12 @@
 
         &-item-redes-link {
             color: v.$white;
+            transition: all 200ms;
+
+            &:hover {
+                color: v.$yellow-1;
+                scale: 1.1;
+            }
         }
     }
 
