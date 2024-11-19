@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <header class="header ">
+    <header class="header" id="header">
         <!-- header -->
         <div class="header__info">
             <div class="header__info-email">
@@ -34,13 +34,13 @@
 
     <nav class="nav">
         <div class="nav__logo">
-            <a href="index.html" class="nav__logo-link">
+            <a href="#header" class="nav__logo-link">
                 <img src="./src/img/logo.png" alt="Logo" class="nav__logo-img">
             </a>
         </div>
 
         <ul class="nav__links">
-            <li class="nav__links-item"><a href="#inicio" class="nav__links-link">Inicio</a></li>
+            <li class="nav__links-item"><a href="#header" class="nav__links-link">Inicio</a></li>
             <li class="nav__links-item"><a href="#nosotros" class="nav__links-link">Nosotros</a></li>
             <li class="nav__links-item"><a href="#faqs" class="nav__links-link">FAQs</a></li>
             <li class="nav__links-item"><a href="#portafolio" class="nav__links-link">Portafolio</a></li>
@@ -135,7 +135,7 @@
             <div class="faqs__grid">
                 <div class="faqs__item">
                     <div class="faqs__item-img">
-                        <video controls controlslist="nodownload" preload="none" autoplay="false" poster="./build/img/poster.jpg" loop="false" 
+                        <video controls controlslist="nodownload" preload="none" poster="./build/img/poster.jpg" 
                         >
                             <source src="./src/video/Do Solar Panels Work in the Winter.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de videos.
@@ -153,7 +153,7 @@
 
                 <div class="faqs__item">
                     <div class="faqs__item-img">
-                        <video controls controlslist="nodownload" preload="none" autoplay="false" poster="./build/img/poster.jpg" loop="false" >
+                        <video controls controlslist="nodownload" preload="none" poster="./build/img/poster.jpg">
                             <source src="./src/video/What Does it Mean to go Off The Grid With Solar.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de videos.
                         </video>
@@ -168,7 +168,7 @@
 
                 <div class="faqs__item">
                     <div class="faqs__item-img">
-                        <video controls controlslist="nodownload" preload="none" autoplay="false" poster="./build/img/poster.jpg" loop="false">
+                        <video controls controlslist="nodownload" preload="none" poster="./build/img/poster.jpg"  >
                             <source src="./src/video/How Does Net Metering Work.mp4" type="video/mp4">
                             Tu navegador no soporta la reproducción de videos.
                         </video>
