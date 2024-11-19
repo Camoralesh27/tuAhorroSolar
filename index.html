@@ -29,26 +29,29 @@
                 <i class="fas fa-phone"></i>
                 <span class="header__info-phone-text"><span>Llámanos:</span> <a class="header__info-phone-number" href="tel: +1 (915)289-90-52">+1 (915)289-90-52</a></span>
             </div>
-        </div>
-
-        <!-- navbar -->
-        <nav class="nav">
-            <div class="nav__logo">
-                <img src="./src/img/logo.png" alt="Logo" class="nav__logo-img">
-            </div>
-            <ul class="nav__links">
-                <li class="nav__links-item"><a href="#" class="nav__links-link">Inicio</a></li>
-                <li class="nav__links-item"><a href="#" class="nav__links-link">Nosotros</a></li>
-                <li class="nav__links-item"><a href="#" class="nav__links-link">FAQs</a></li>
-                <li class="nav__links-item"><a href="#" class="nav__links-link">Portafolio</a></li>
-                <li class="nav__links-item"><a href="#" class="nav__links-link">Testimoniales</a></li>
-                <li class="nav__links-item"><a href="#" class="nav__links-link">Contacto</a></li>
-            </ul>
-            <a href="#contacto" class="nav__button" id="ver-planes">Ver planes</a>
-        </nav> <!-- .navbar -->
+        </div>    
     </header>
 
-    <main class="hero">
+    <nav class="nav">
+        <div class="nav__logo">
+            <a href="index.html" class="nav__logo-link">
+                <img src="./src/img/logo.png" alt="Logo" class="nav__logo-img">
+            </a>
+        </div>
+
+        <ul class="nav__links">
+            <li class="nav__links-item"><a href="#inicio" class="nav__links-link">Inicio</a></li>
+            <li class="nav__links-item"><a href="#nosotros" class="nav__links-link">Nosotros</a></li>
+            <li class="nav__links-item"><a href="#faqs" class="nav__links-link">FAQs</a></li>
+            <li class="nav__links-item"><a href="#portafolio" class="nav__links-link">Portafolio</a></li>
+            <li class="nav__links-item"><a href="#testimoniales" class="nav__links-link">Testimoniales</a></li>
+            <li class="nav__links-item"><a href="#contacto" class="nav__links-link">Contacto</a></li>
+        </ul>
+        
+        <a href="#contacto" class="nav__button" id="ver-planes">Ver planes</a>
+    </nav> 
+
+    <main class="hero" id="inicio">
         <div class="hero__line">
 
         </div>
@@ -80,7 +83,7 @@
         </div>
     </section>
 
-    <section class="nosotros">
+    <section class="nosotros" id="nosotros">
         <div class="nosotros__content">
             <h2 class="nosotros__title">
                 ¿Quiénes somos?
@@ -119,7 +122,7 @@
         </div>
     </section>
 
-    <section class="faqs contenedor">
+    <section class="faqs contenedor" id="faqs">
         <div class="faqs__box">
             <div class="faqs__contenido">
                 <h2 class="faqs__title">Preguntas Frecuentes</h2>
@@ -190,7 +193,7 @@
 
 
 
-    <section class="portafolio">
+    <section class="portafolio" id="portafolio">
         <h2 class="portafolio__title">Trabajos Recientes</h2>
 
         <div class="portafolio__line contenedor"></div>
@@ -209,7 +212,7 @@
             
     </section>
 
-    <section class="testimoniales">
+    <section class="testimoniales" id="testimoniales">
         <h2 class="testimoniales__title">Lo que nuestros clientes dicen</h2>
 
         <div class="testimoniales__line"></div>

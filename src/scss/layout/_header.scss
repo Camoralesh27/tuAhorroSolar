@@ -40,14 +40,18 @@
 /* NAV BAR */
 
 .nav {
+    position: sticky;
+    top: 0;
+    left: 0;
     display: flex;
     max-width: 100vw;
     padding: .6rem 2.9rem;
     background: var(--white, #FBFBFB);
     justify-content: space-between;
     align-items: center;
+    box-shadow: v.$box-shadow;
     z-index: 100;
-    position: sticky;
+    
 
     &__logo {
         width: 25.6rem;
