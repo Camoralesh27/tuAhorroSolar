@@ -22,6 +22,7 @@
     }
 
     &__button {
+        margin-top: 3rem;
         @include m.boton(v.$blue-3, v.$white);
     }
 

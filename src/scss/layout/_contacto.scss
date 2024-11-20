@@ -156,7 +156,23 @@
             border: none;
             border-radius: 1rem;
             padding: 1rem 2rem;
-            font-size: v.$normal-font-size;     
+            font-size: v.$normal-font-size; 
+            transition: all 200ms;
+            
+            &:focus {
+                background-color: rgba(v.$yellow-2, .2);
+                transform: scale(1.02);
+                border: none;
+                outline: none;
+            }
+
+            &[type="radio"]:checked {
+                accent-color: v.$yellow-1;
+                
+                &:hover {
+                    accent-color: v.$yellow-1;
+                }
+            }
         }
 
         &-submit {
