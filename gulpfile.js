@@ -83,20 +83,40 @@ export async function imagenes(done) {  //webp
 
 function procesarImagenes(file, outputSubDir) {
     if (!fs.existsSync(outputSubDir)) {
-        fs.mkdirSync(outputSubDir, { recursive: true })
+        fs.mkdirSync(outputSubDir, { recursive: true });
     }
-    const baseName = path.basename(file, path.extname(file))
-    const extName = path.extname(file)
-    const outputFile = path.join(outputSubDir, `${baseName}${extName}`)
-    const outputFileWebp = path.join(outputSubDir, `${baseName}.webp`)
-    const outputFileAvif = path.join(outputSubDir, `${baseName}.avif`)
+    const baseName = path.basename(file, path.extname(file));
+    const extName = path.extname(file);
+    const outputFile = path.join(outputSubDir, `${baseName}${extName}`);
+    const outputFileWebp = path.join(outputSubDir, `${baseName}.webp`);
+    const outputFileAvif = path.join(outputSubDir, `${baseName}.avif`);
 
-    const options = { quality: 80 }
-    sharp(file).png(options).toFile(outputFile)
-    sharp(file).jpeg(options).toFile(outputFile)
-    sharp(file).webp(options).toFile(outputFileWebp)
-    sharp(file).avif().toFile(outputFileAvif)
+    const options = { quality: 80 };
+
+    // Verifica metadatos de la imagen
+    sharp(file)
+        .metadata()
+        .then((meta) => {
+            console.log(`Processing file: ${file}, hasAlpha: ${meta.hasAlpha}`);
+
+            // Si es un PNG, maneja transparencia
+            if (extName.toLowerCase() === '.png') {
+                sharp(file)
+                    .toFormat('png', { compressionLevel: 9, force: true }) // Mantiene transparencia
+                    .toFile(outputFile)
+                    .then(() => console.log(`Processed PNG: ${file}`))
+                    .catch((err) => console.error(`Error processing PNG: ${file}`, err));
+            } else {
+                // Procesa otros formatos
+                sharp(file).jpeg(options).toFile(outputFile);
+                sharp(file).webp(options).toFile(outputFileWebp);
+                sharp(file).avif().toFile(outputFileAvif);
+            }
+        })
+        .catch((err) => console.error(`Error retrieving metadata: ${file}`, err));
 }
+
+
 
 export function dev() {
     watch('src/scss/**/*.scss', css) 
@@ -104,7 +124,7 @@ export function dev() {
     watch('src/img/**/*.{png,jpg}', imagenes)
 }
 
-/* export default series (crop, js, css, imagenes, dev) */
-export default series ( js, css, languages, svg, imagenes, dev)
+/* export default series (crop, js, css, languages, imagenes, dev) */
+export default series ( js, css, svg, imagenes, dev)
 
 
