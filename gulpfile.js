@@ -2,39 +2,75 @@ import path from 'path'
 import fs from 'fs'
 import { glob } from 'glob'
 
-import {src, dest, watch, series} from 'gulp'
-import * as dartSass from 'sass'
-import gulpSass from 'gulp-sass'    
+import { src, dest, watch, series } from 'gulp'
+import sass from 'sass'  // Directamente importamos 'sass' ahora
+import gulpSass from 'gulp-sass'  // Usamos gulp-sass con la nueva API
 
-const sass = gulpSass(dartSass) /* en ves de encontrar sass en nodemodules la encuentra aquí */
+const sassCompiler = gulpSass(sass)  // Pasamos 'sass' a gulp-sass para usar la nueva API
 
 import terser from 'gulp-terser'
 import sharp from 'sharp'
+import ffmpeg from 'fluent-ffmpeg';
+
+export async function videos(done) {
+    const inputFolder = 'src/videos';
+    const outputFolder = 'build/videos';
+
+    // Verifica que la carpeta de salida exista
+    if (!fs.existsSync(outputFolder)) {
+        fs.mkdirSync(outputFolder, { recursive: true });
+    }
+
+    // Obtiene los videos en la carpeta de entrada
+    const videos = await glob(`${inputFolder}/**/*.{mp4,mov,avi,mkv}`);
+
+    videos.forEach((video) => {
+        const outputFile = path.join(outputFolder, path.basename(video));
+
+        // Usa FFmpeg para comprimir el video
+        ffmpeg(video)
+            .output(outputFile)
+            .videoCodec('libx264') // Codec eficiente y ampliamente compatible
+            .audioCodec('aac')    // Codec de audio eficiente
+            .size('1280x720')    // Mantén resolución Full HD (opcional) size('1920x1080')
+            .outputOptions([
+                '-crf 23',        // Calidad visual buena y tamaño reducido
+                '-preset medium', // Equilibrio entre velocidad y compresión
+                '-movflags +faststart' // Optimización para streaming web
+            ])
+            .on('start', () => console.log(`Processing video: ${video}`))
+            .on('end', () => console.log(`Video processed: ${outputFile}`))
+            .on('error', (err) => console.error(`Error processing ${video}:`, err))
+            .run();
+    });
+
+    done();
+}
 
 export function js(done) {
     src('src/js/app.js')
         .pipe(terser()) /* terser mimifica el codigo de JS */
-        .pipe( dest('build/js') )
+        .pipe(dest('build/js'))
 
     done()
 }
 
 export function languages(done) {
     src('src/languages/*.json')
-        .pipe( dest('build/languages') )
+        .pipe(dest('build/languages'))
     done()
 }
 
 export function svg(done) {
     src('src/img/*.svg')
-        .pipe( dest('build/img') )
+        .pipe(dest('build/img'))
     done()
 }
 
-export function css( done ){
-    src('src/scss/app.scss', {sourcemaps: true}) 
-        .pipe( sass({outputStyle: 'compressed'}).on('error', sass.logError)) 
-        .pipe( dest('build/css', {sourcemaps: '.'})) 
+export function css(done) {
+    src('src/scss/app.scss', { sourcemaps: true })
+        .pipe(sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError)) 
+        .pipe(dest('build/css', { sourcemaps: '.' }))
 
     done();
 }
@@ -55,7 +91,7 @@ export async function crop(done) {
         images.forEach(file => { //empieza a procesar las imagenes 
             const inputFile = path.join(inputFolder, file)
             const outputFile = path.join(outputFolder, file)
-            sharp(inputFile) 
+            sharp(inputFile)
                 .resize(width, height, {
                     position: 'centre'
                 })
@@ -71,7 +107,7 @@ export async function crop(done) {
 export async function imagenes(done) {  //webp
     const srcDir = './src/img';
     const buildDir = './build/img';
-    const images =  await glob('./src/img/**/*.{jpg,png}')
+    const images = await glob('./src/img/**/*.{jpg,png}')
 
     images.forEach(file => {
         const relativePath = path.relative(srcDir, path.dirname(file));
@@ -116,15 +152,12 @@ function procesarImagenes(file, outputSubDir) {
         .catch((err) => console.error(`Error retrieving metadata: ${file}`, err));
 }
 
-
-
 export function dev() {
-    watch('src/scss/**/*.scss', css) 
+    watch('src/scss/**/*.scss', css)
     watch('src/js/**/*.js', js)
     watch('src/img/**/*.{png,jpg}', imagenes)
+    watch('src/videos/**/*.{mp4,mov,avi,mkv}', videos);
 }
 
-/* export default series (crop, js, css, languages, imagenes, dev) */
-export default series ( js, css, svg, imagenes, dev)
-
-
+/* export default series (crop, js, css, svg, languages, imagenes, dev) */
+export default series(js, css, svg, videos, imagenes, dev)

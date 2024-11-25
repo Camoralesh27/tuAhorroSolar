@@ -16,6 +16,7 @@
   "author": "Cristhian Morales @camoralesh27",
   "license": "ISC",
   "devDependencies": {
+    "fluent-ffmpeg": "^2.1.3",
     "glob": "^10.4.2",
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0",
