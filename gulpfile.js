@@ -160,4 +160,5 @@ export function dev() {
 }
 
 /* export default series (crop, js, css, svg, languages, imagenes, dev) */
-export default series(js, css, svg, videos, imagenes, dev)
+/* export default series(js, css, svg, videos, imagenes, dev) */
+export default series(js, css, dev)

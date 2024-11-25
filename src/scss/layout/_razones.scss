@@ -2,5 +2,97 @@
 @use 'base/variables' as v;
 
 .razones {
-    
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+
+    &__contenido {
+        background-color: v.$gray-3;
+        color: v.$white;
+        padding: 4rem;
+    }
+
+    &__title {
+        font-size: v.$h3-font-size;
+        font-weight: 700;
+        color: v.$white;
+        margin-bottom: 2rem;
+    }
+
+    &__line {
+        width: 7rem;
+        height: .5rem;
+        background-color: v.$yellow-2;
+    }
+
+    &__text {
+        padding: 3rem 0;
+    }
+
+    &__button {
+        width: 100%;
+        @include m.boton(v.$yellow-2, v.$black);
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        
+
+        &-video {
+            width: 100%;
+            max-width: 100%;
+            aspect-ratio: 16/9; /* Agrega la relación de aspecto original del video */
+            display: block;
+            object-fit: cover;
+            margin: 0 auto;
+            height: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__item1 {
+        background-color: v.$yellow-2;
+        color: v.$black;
+        padding: 1.5rem;
+
+        &-contactanos {
+            font-size: v.$h3-font-size;
+            font-weight: 700;
+        }
+
+        &-phone {
+            font-size: v.$normal-font-size;
+            font-weight: 500;
+            color: v.$black;
+        }
+
+        &-phone-link {
+            color: v.$black;
+        }
+    }
+
+    &__item2 {
+        background-color: v.$white;
+        color: v.$blue-2;
+        padding: 1.5rem;
+
+        &-referido {
+            font-size: v.$h4-font-size;
+            line-height: 4rem;
+
+            &--resaltado {
+                font-size: v.$h3-font-size;
+                font-weight: 700;
+                color: v.$blue-3;
+            }
+        }
+    }
+
+
 }
