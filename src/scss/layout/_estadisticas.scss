@@ -8,8 +8,12 @@
 
     &__box {
         display: grid;
-        grid-template-columns: 4fr 2fr
+        grid-template-columns: 4fr 2fr;
         
+        @include m.phone {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 
     &__grid {
@@ -17,6 +21,12 @@
         flex-direction: row;
         gap: 2rem;
         justify-content: center;
+
+        @include m.phone {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
     }
 
     &__grid-1 {
@@ -24,6 +34,10 @@
         flex-direction: column;
         gap: 5rem;
         justify-content: center;
+
+        @include m.phone {
+            gap: 2rem;
+        }
     }
 
     &__grid-2 {
@@ -32,6 +46,11 @@
         gap: 5rem;
         justify-content: center;
         margin-left: -5rem;
+
+        @include m.phone {
+            margin: 0;
+            gap: 2rem;
+        }
     }
 
     &__item {
@@ -41,10 +60,15 @@
         color: v.$blue-2;
         padding: 3rem;
         width: 37rem;
+
+        @include m.phone {
+            width: 30rem;
+        }
         
 
         &--icono {
             position: relative;
+
         }
 
         &-img {
@@ -52,6 +76,10 @@
             position: absolute;
             top: -2rem;
             right: -4rem;
+
+            @include m.phone {
+                display: none;
+            }
         }
 
         &-resalte {
@@ -75,6 +103,10 @@
             &--grande {
                 font-size: v.$h2-font-size;
                 font-weight: 700;
+
+                @include m.tablet {
+                    font-size: v.$h1-font-size-mobile;
+                }
             }
         }
     }
@@ -84,6 +116,7 @@
         flex-direction: column;
         gap: 2rem;
         justify-content: center;
+        margin-bottom: 2rem;
     }
 
     &__title {
@@ -99,11 +132,8 @@
     }
 
     &__button {
-        margin-top: 2rem;
+        
         @include m.boton(v.$yellow-2, v.$black);
     }
 
-
-
-    
 }

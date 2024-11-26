@@ -12,6 +12,10 @@
         display: grid;
         grid-template-columns: 3fr 8fr;
         gap: 2rem;
+
+        @include m.phone {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__contenido {
@@ -35,6 +39,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+
+        @include m.phone {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__item {

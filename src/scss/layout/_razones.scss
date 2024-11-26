@@ -5,6 +5,10 @@
     display: grid;
     grid-template-columns: 3fr 7fr;
 
+    @include m.phone {
+        grid-template-columns: 1fr;
+    }
+
     &__contenido {
         background-color: v.$gray-3;
         color: v.$white;
@@ -54,6 +58,11 @@
     &__box {
         display: grid;
         grid-template-columns: 1fr 1fr;
+
+        @include m.phone {
+            display: flex;
+            flex-direction: column-reverse;
+        }
     }
 
     &__item1 {
