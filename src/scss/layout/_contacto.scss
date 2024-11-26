@@ -4,12 +4,21 @@
 .contacto {
     background-color: v.$brown-3;
     padding: 5.4rem 9.2rem;
+
+    @include m.phone {
+        padding: 1rem 2rem;
+    }
     
 
     &__title {
         font-size: v.$h2-font-size;
         color: v.$white;
         text-align: center;
+
+        @include m.phone {
+            font-size: v.$h1-font-size-mobile;
+            margin-bottom: 2rem;
+        }
     }
 
     &__check {
@@ -20,6 +29,12 @@
         align-items: center;
         gap: 9rem;
         margin-bottom: 4rem;
+
+        @include m.phone {
+            flex-direction: column;
+            gap: 1rem;
+            line-height: 2.5rem;
+        }
     }
 
     &__item {
@@ -35,6 +50,10 @@
         justify-content: center;
         align-items: center;
         gap: 3rem;
+
+        @include m.phone {
+            grid-template-columns: 1fr;
+        }
     }
 
 
@@ -44,6 +63,12 @@
         color: v.$white;
         padding: 3.3rem 4rem;
         height: 83rem;
+
+        @include m.phone {
+            height: auto;
+            padding: 3rem 2rem;
+            border-radius: 0;
+        }
 
 
         &-title {
@@ -105,11 +130,23 @@
         padding: 4rem;
         height: 83rem;
 
+        @include m.phone {
+            max-width: 100vw;
+            height: auto;
+            padding: 1.5rem 1rem; 
+        }
+
         &-title {
             color: v.$black;
             font-size: v.$h3-font-size;
             /* text-align: center; */
             text-transform: uppercase;
+
+            @include m.phone {
+                text-align: center;
+                line-height: 4rem;
+                margin-bottom: 2rem;
+            }
         }
 
         &-text {
@@ -118,6 +155,10 @@
             padding-left: 2rem;
             line-height: 2.5rem;
             margin-bottom: 3rem;
+
+            @include m.phone {
+                padding: 1rem;
+            }
         }
 
         &-formulario {
@@ -135,12 +176,22 @@
             justify-content: center;
             gap: 1.5rem;
             border: none;
+
+            @include m.phone {
+                gap: 1rem;
+            }
         }
 
         &-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
+
+            @include m.phone {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
 
         &-label {
@@ -150,6 +201,9 @@
             border-radius: 2rem;
             background-color: v.$white;
 
+            @include m.phone {
+                padding: 1.5rem 2rem;
+            }
         }
         
         &-input {
@@ -158,6 +212,10 @@
             padding: 1rem 2rem;
             font-size: v.$normal-font-size; 
             transition: all 200ms;
+
+            @include m.phone {
+                padding: 0;
+            }
             
             &:focus {
                 background-color: rgba(v.$yellow-2, .2);
