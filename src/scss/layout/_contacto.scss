@@ -14,6 +14,7 @@
         font-size: v.$h2-font-size;
         color: v.$white;
         text-align: center;
+        margin-bottom: 3rem;
 
         @include m.phone {
             font-size: v.$h1-font-size-mobile;
@@ -48,11 +49,12 @@
         display: grid;
         grid-template-columns: 4fr 7fr;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 3rem;
 
         @include m.phone {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -62,7 +64,7 @@
         border-radius: 2rem;
         color: v.$white;
         padding: 3.3rem 4rem;
-        height: 83rem;
+        height: auto;
 
         @include m.phone {
             height: auto;
@@ -127,11 +129,10 @@
         color: v.$black;
         border-radius: 2rem;
         padding: 4rem;
-        height: 83rem;
+        height: auto;
 
         @include m.phone {
             max-width: 100vw;
-            height: auto;
             padding: 1.5rem 1rem; 
         }
 
@@ -154,6 +155,12 @@
             padding-left: 2rem;
             line-height: 2.5rem;
             margin-bottom: 3rem;
+
+            &--bold {
+                font-weight: 700;
+                font-style: italic;
+                font-size: v.$h5-font-size-mobile;
+            }
 
             @include m.phone {
                 padding: 1rem;
@@ -178,6 +185,17 @@
 
             @include m.phone {
                 gap: 1rem;
+            }
+
+            &-title {
+                font-size: v.$h5-font-size;
+                font-weight: 600;
+
+                & span {
+                    font-weight: 400;
+                    font-style: italic;
+                    font-size: v.$h5-font-size-mobile;
+                }
             }
         }
 

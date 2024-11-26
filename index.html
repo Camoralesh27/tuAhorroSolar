@@ -560,30 +560,30 @@
             <div class="contacto__form">
                 <h3 class="contacto__form-title">Solicita una cotización</h3>
 
-                <p class="contacto__form-text">Llena el formulario y uno de nuestros asesores se pondrá en contacto contigo.</p>
+                <p class="contacto__form-text">Llena el formulario y uno de nuestros asesores se pondrá en contacto contigo. <br><span class="contacto__form-text--bold">* Campos obligatorios.</span></p>
 
                 <form action="" class="contacto__form-formulario">
 
                     <fieldset class="contacto__form-fieldset">
                         <div class="contacto__form-grid">
-                            <label for="nombre" class="contacto__form-label">Nombre
+                            <label for="nombre" class="contacto__form-label">* Nombre
     
                                 <input type="text" name="nombre" id="nombre" class="contacto__form-input" placeholder="Tu nombre" required >
                             </label>
         
-                            <label for="telefono" class="contacto__form-label">Teléfono
+                            <label for="telefono" class="contacto__form-label">* Teléfono
         
                                 <input type="tel" name="telefono" id="telefono" class="contacto__form-input" placeholder="Tú numero telefónico" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                                 title="Por favor, ingresa un número telefónico válido en el formato XXX-XXX-XXXX" required>
                             </label>
         
-                            <label for="cp" class="contacto__form-label">Código Postal
+                            <label for="cp" class="contacto__form-label">* Código Postal
         
                                 <input type="text" name="cp" id="cp" class="contacto__form-input" placeholder="Tu código postal" pattern="[0-9]{5}"
                                 title="Por favor, ingresa un código postal válido de 5 dígitos" required>
                             </label>
         
-                            <label for="email" class="contacto__form-label">Email
+                            <label for="email" class="contacto__form-label">* Email
         
                                 <input type="email" name="email" id="email" class="contacto__form-input" placeholder="Tú correo electrónico" required>
                             </label>
@@ -594,7 +594,7 @@
                     <fieldset class="contacto__form-fieldset">
                         
                     <div class="contacto__form-radio">
-                        <label class="contacto__form-label w100 inline-block">¿Eres propietario de una casa?
+                        <label class="contacto__form-label w100 inline-block">* ¿Eres propietario de una casa?
                             <br>
                             <label for="si" class="contacto__form-desicion"><input type="radio" name="propietario" id="si" value="si" class="contacto__form-input" required> Sí</label>
                         
@@ -602,7 +602,7 @@
                         </label>
                     </div>
 
-                    <label for="gasto-luz" class="contacto__form-label">¿Cuánto gastas de luz?
+                    <label for="gasto-luz" class="contacto__form-label">* ¿Cuánto gastas de luz?
 
                         <br>
 
@@ -614,6 +614,28 @@
                             <option value="Más de $500 USD">Más de $500 USD</option>
                         </select>
                     </label>
+                    </fieldset>
+
+                    <fieldset class="contacto__form-fieldset"> 
+                        <p class="contacto__form-fieldset-title">Referido <span> (Opcional)</span>.</p>
+                        <div class="contacto__form-grid">
+                            <label for="nombre" class="contacto__form-label">Nombre Referido
+    
+                                <input type="text" name="nombre" id="nombre" class="contacto__form-input" placeholder="Nombre referido" required >
+                            </label>
+        
+                            <label for="telefono" class="contacto__form-label">Teléfono Referido
+        
+                                <input type="tel" name="telefono" id="telefono" class="contacto__form-input" placeholder=" Numero telefónico " pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Por favor, ingresa un número telefónico válido en el formato XXX-XXX-XXXX" required>
+                            </label>
+        
+                            <label for="cp" class="contacto__form-label">Código Postal Referido
+        
+                                <input type="text" name="cp" id="cp" class="contacto__form-input" placeholder="Código postal de referido" pattern="[0-9]{5}"
+                                title="Por favor, ingresa un código postal válido de 5 dígitos" required>
+                            </label>
+                        </div>
                     </fieldset>
                     
                     <button type="submit" class="contacto__form-submit">
