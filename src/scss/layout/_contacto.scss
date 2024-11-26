@@ -67,7 +67,6 @@
         @include m.phone {
             height: auto;
             padding: 3rem 2rem;
-            border-radius: 0;
         }
 
 
@@ -214,7 +213,7 @@
             transition: all 200ms;
 
             @include m.phone {
-                padding: 0;
+                padding: 1rem;
             }
             
             &:focus {
