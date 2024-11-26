@@ -60,6 +60,10 @@
         background-color: v.$yellow-2;
         color: v.$black;
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
         &-contactanos {
             font-size: v.$h3-font-size;
@@ -81,6 +85,10 @@
         background-color: v.$white;
         color: v.$blue-2;
         padding: 1.5rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &-referido {
             font-size: v.$h4-font-size;

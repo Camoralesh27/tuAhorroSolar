@@ -13,6 +13,12 @@
     $h5-font-size: 2rem;
     $normal-font-size: 1.8rem;
 
+    $h1-font-size-mobile: 3.2rem;
+    $h2-font-size-mobile: 2.8rem;
+    $h3-font-size-mobile: 2rem;
+    $h4-font-size-mobile: 1.8rem;
+    $h5-font-size-mobile: 1.8rem;
+    $normal-font-size-mobile: 1.8rem;
 
 // MEDIA QUERIES
     $phone: 768px;
@@ -43,15 +49,3 @@
 // BORDER-RADIUS
     $border-radius: 2rem;
 
-
-
-   /* Font size for large devices */
-    /* @media screen and (min-width: 968px) {
-        $big-font-size: 3rem;
-        $h1-font-size: 2.25rem;
-        $h2-font-size: 1.5rem;
-        $h3-font-size: 1.25rem;
-        $normal-font-size: 1rem;
-        $small-font-size: .875rem;
-        $smaller-font-size: .813rem;
-    } */

@@ -9,6 +9,15 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem 0;
+
+        @include m.phone {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            gap: 2rem;
+            margin-top: 1rem; 
+        }
     }
     
     &__boton {
@@ -20,6 +29,11 @@
         font-size: v.$h3-font-size;
         font-weight: 400;
         font-family: v.$heading-font;
+
+        @include m.phone {
+            line-height: 5rem;
+            text-align: center;
+        }
 
         &--precio {
             font-size: v.$h2-font-size;
