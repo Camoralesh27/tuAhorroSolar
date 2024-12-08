@@ -562,7 +562,9 @@
 
                 <p class="contacto__form-text">Llena el formulario y uno de nuestros asesores se pondrá en contacto contigo. <br><span class="contacto__form-text--bold">* Campos obligatorios.</span></p>
 
-                <form method="post" action="" name="contact-form" class="contacto__form-formulario">
+                <!-- <form method="post" action="https://script.google.com/macros/s/AKfycbw8arUudVzHa5IRcx5RDRmQ6FZCR-w0uWfmqd5DHE_STiNwHDM8OvOlubSwvaPW4Ewx6w/exec" name="contact-form" class="contacto__form-formulario">  -->
+
+                <form id="contact-form" class="contacto__form-formulario">   
 
                     <fieldset class="contacto__form-fieldset">
                         <div class="contacto__form-grid">
@@ -621,19 +623,19 @@
                         <div class="contacto__form-grid">
                             <label for="nombreR1" class="contacto__form-label">Nombre Referido
     
-                                <input type="text" name="nombreR1" id="nombreR1" class="contacto__form-input" placeholder="Nombre referido" required >
+                                <input type="text" name="nombreR1" id="nombreR1" class="contacto__form-input" placeholder="Nombre referido">
                             </label>
         
                             <label for="telefonoR1" class="contacto__form-label">Teléfono Referido
         
                                 <input type="tel" name="telefonoR1" id="telefonoR1" class="contacto__form-input" placeholder=" Numero telefónico " pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-                                title="Por favor, ingresa un número telefónico válido en el formato XXX-XXX-XXXX" required>
+                                title="Por favor, ingresa un número telefónico válido en el formato XXX-XXX-XXXX">
                             </label>
         
                             <label for="cpR1" class="contacto__form-label">Código Postal Referido
         
                                 <input type="text" name="cpR1" id="cpR1" class="contacto__form-input" placeholder="Código postal de referido" pattern="[0-9]{5}"
-                                title="Por favor, ingresa un código postal válido de 5 dígitos" required>
+                                title="Por favor, ingresa un código postal válido de 5 dígitos">
                             </label>
                         </div>
                     </fieldset>
