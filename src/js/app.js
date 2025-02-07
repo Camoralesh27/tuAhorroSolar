@@ -75,3 +75,7 @@ function mostrarMensajeError() {
         spinnerText.style.color = ""; // Resetea el color del texto
     }, 3000);
 }
+
+
+/* ==== Actualizar año footer automaticamente ==== */
+document.getElementById("year").textContent = new Date().getFullYear();
